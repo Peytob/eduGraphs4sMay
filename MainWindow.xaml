@@ -46,6 +46,32 @@
 
                 <!-- Радиус вершин -->
                 <Grid
+                    Grid.Column="1"
+                    Grid.Row="1">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Content="Площадь преград (%)"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="14" />
+
+                    <TextBox
+                        x:Name="GarbagePercentTextBox"
+                        Grid.Row="1"
+                        FontSize="14"
+                        Text="5"
+                        TextAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        PreviewTextInput="OnlyNumbersLess100Filter" />
+                </Grid>
+
+                <Grid
                     Grid.Column="0"
                     Grid.Row="0">
 
@@ -56,15 +82,16 @@
 
                     <Label
                         Grid.Row="0"
-                        Content="Радиус вершин ↓ (px)"
+                        Content="Радиус вершин Δ (px)"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         FontSize="14" />
 
                     <TextBox
-                        x:Name="DeltaTextBox"
+                        x:Name="VertexesDeltaTextBox"
                         Grid.Row="1"
                         FontSize="14"
+                        Text="20"
                         TextAlignment="Center"
                         VerticalContentAlignment="Center"
                         PreviewTextInput="OnlyNumbersFilter" />
@@ -91,7 +118,8 @@
                         x:Name="FieldTypeComboBox"
                         Grid.Row="1"
                         HorizontalContentAlignment="Center"
-                        VerticalContentAlignment="Center" SelectionChanged="FieldTypeComboBox_SelectionChanged">
+                        VerticalContentAlignment="Center"
+                        SelectedIndex="0" >
                         <TextBlock
                             FontSize="14"
                             Text="Квадрат" />
@@ -122,11 +150,91 @@
                         FontSize="14" />
 
                     <TextBox
-                        x:Name="GarbageTextBox"
+                        x:Name="GarbageNumberTextBox"
+                        Grid.Row="1"
+                        FontSize="14"
+                        Text="4"
+                        TextAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        PreviewTextInput="OnlyNumbersFilter" />
+                </Grid>
+
+                <Grid
+                    Grid.Column="2"
+                    Grid.Row="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Content="Сторона квадрата (px)"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="14" />
+
+                    <TextBox
+                        x:Name="SquareSideTextBox"
+                        Grid.Row="1"
+                        FontSize="14"
+                        Text="0"
+                        TextAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        PreviewTextInput="OnlyNumbersFilter" LostFocus="SquareSideTextBox_LostFocus" />
+                </Grid>
+
+                <Grid
+                    Grid.Column="2"
+                    Grid.Row="1">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Content="Площадь фигуры (px^2)"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="13" />
+
+                    <TextBox
+                        x:Name="AreaTextBox"
                         Grid.Row="1"
                         FontSize="14"
                         TextAlignment="Center"
                         VerticalContentAlignment="Center"
+                        IsReadOnly="True"
+                        Background="LightPink"
+                        PreviewTextInput="OnlyNumbersFilter" />
+                </Grid>
+
+                <Grid
+                    Grid.Column="3"
+                    Grid.Row="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Content="Количество вершин"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="14" />
+
+                    <TextBox
+                        x:Name="VertexesNumber"
+                        Grid.Row="1"
+                        FontSize="14"
+                        TextAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Text="9"
                         PreviewTextInput="OnlyNumbersFilter" />
                 </Grid>
             </Grid>
